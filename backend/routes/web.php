@@ -30,3 +30,4 @@ Route::get("/index", [ContentController::class, "index"])->name("index");
 Route::get("/show/{content_id}", [ContentController::class, "show"])->name("show");
 Route::get("/edit/{content_id}", [ContentController::class, "edit"])->name("edit");
 Route::post("/update", [ContentController::class, "update"])->name("update");
+Route::post("/delete", [ContentController::class, "delete"])->name("delete");

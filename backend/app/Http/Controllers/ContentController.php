@@ -68,4 +68,14 @@ class ContentController extends Controller
 
    		return redirect(route("index"));
    	}
+
+   	//投稿の削除
+   	public function delete(Request $request)
+   	{
+   		$contents_delete_query = Content::select("*");
+   		$contents_delete_query->find($request["id"]);
+   		$contents_delete_query->delete();
+
+   		return redirect(route("index"));
+   	}
 }
