@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// jetstreamログイン後画面
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
