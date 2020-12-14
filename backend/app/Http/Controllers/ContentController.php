@@ -22,6 +22,7 @@ class ContentController extends Controller
    		$input_content = new Content();
    		//インスタンスのcontentプロパティに引数$requestに格納されたcontentを格納
    		$input_content->content = $request["content"];
+
    		//変数を保存
    		$input_content->save();
    		//indexページにリダイレクト
@@ -31,10 +32,11 @@ class ContentController extends Controller
    	//投稿一覧表示
    	public function index()
    	{
-   		// 
+   		// Content::select("*")の構文を理解する
    		$contents_get_query = Content::select("*");
    		$items = $contents_get_query->get();
 
+   		//contents.indexに$itemsを継承
    		return view("contents.index", [
    			"items" => $items,
    		]);
